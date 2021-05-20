@@ -41,8 +41,8 @@
                         </div>
                         <div class="col-md-5 center-item">
                            <div class="input-group number-spinner">
-                              <button class="btn btn-default"><i id='bcMinus'class="fas fa-minus"></i></button>
-                              <input type="text"  id='bcNoClick'class="form-control text-center" value="1">
+                              <button class="btn btn-default"><i id='bcMinus' class="fas fa-minus"></i></button>
+                              <input type="text"  id='bcNoClick' class="form-control text-center" value="1">
                               <button class="btn btn-default"><i id='bcPlus'class="fas fa-plus"></i></button>
 
                            </div>
@@ -57,14 +57,14 @@
 
                         <div class="col-md-8">
                            <h5>Subtotal: </h5>
-                           <h5>Tax:</h5>
+                           <h5>Tax(5%):</h5>
                            <h5>Total:</h5>
                         </div>
 
                         <div class="col-md-4 status">
-                           <h5>$1,278</h5>
-                           <h5>$0</h5>
-                           <h5>$1,278</h5>
+                           <h5>$<span id='subtotal'>00</span></h5>
+                           <h5>$<span id='Tax'>00</span></h5>
+                           <h5>$<span id='Total'>00</span></h5>
                         </div>
                      </div>
                   </div>
@@ -92,41 +92,51 @@
          //Plus Button Event Handler for phone
          const phnPlus = document.getElementById('phnPlus');
          phnPlus.addEventListener('click', function() {
-            calculations('noClick', 'price', 1229);
+            additions('noClick', 'price', 1229);
          })
 
          //Minus Button Event Handler for phone
          const phnMinus = document.getElementById('phnMinus');
          phnMinus.addEventListener('click', function(){
-               calculations2('noClick', 'price', 1229);
+            subtractions('noClick', 'price', 1229);
          })
 
          //Plus Button Event Handler for backcover
          const bcPlus = document.getElementById('bcPlus');
          bcPlus.addEventListener('click', function(){
-            calculations('bcNoClick', 'price2', 59);
+            additions('bcNoClick', 'price2', 59);
          })
 
          //Minus Button Event Handler for backcover
-         const bcMinus = document.getElementById('bcMinus');
-         bcMinus.document.addEventListener('click', function(){
-            calculations2('bcNoClick', 'price2', 59);
+         const bcMin = document.getElementById('bcMinus');
+         bcMin.document.addEventListener('click', function(){
+            subtractions('bcNoClick', 'price2', 59);
          })
 
-         function calculations(id1, id2, p) {
+         function additions(id1, id2, p) {
             var value = parseInt(document.getElementById(id1).value)+1;
             document.getElementById(id1).value = value;
             var totalPrice = parseInt(document.getElementById(id2).innerText)+p;
             document.getElementById(id2).innerText = totalPrice;
+            subTotal(totalPrice);
+
          }
 
-         function calculations2(id1, id2, p) {
+         function subtractions(id1, id2, p) {
             var value = parseInt(document.getElementById(id1).value);
             if (value >= 2){
                document.getElementById(id1).value = value - 1;
                var totalPrice = parseInt(document.getElementById(id2).innerText)-p;
                document.getElementById(id2).innerText = totalPrice;
+               subTotal(totalPrice);
             }  
+         }
+
+         // Total calculation
+         function subTotal(sub_total){
+               document.getElementById('subtotal').innerText = sub_total;
+               document.getElementById('Tax').innerText = (sub_total * 0.05).toFixed(2);
+               document.getElementById('Total').innerText = (sub_total + sub_total * 0.05).toFixed(2);
          }
 
       </script>
