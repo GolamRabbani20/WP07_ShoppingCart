@@ -1,3 +1,7 @@
+#checkOutDone{
+	display: none;
+}
+
 body{
 	background: #fff;
 }
@@ -54,6 +58,4 @@ body{
 	border: none;
 }
 
-#checkOutDone{
-	display: none;
-}
+
