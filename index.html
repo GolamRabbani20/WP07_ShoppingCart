@@ -10,7 +10,7 @@
 </head>
 
    <body>
-      <section>
+      <section id='vanish'>
          <div class="container">
             <div id = 'cart_item' class="cart">
                <div class="col-md-12 col-lg-10 mx-auto">
@@ -69,14 +69,28 @@
                      </div>
                   </div>
                   <div class="col-md-12 pt-4 pb-4">
-                     <button type="button" class="btn btn-success check-out">Check Out</button>
+                     <button type="button" id='checkOut' class="btn btn-success check-out">Check Out</button>
                   </div>
                </div>
             </div>
          </div>
       </section>
 
+      <div id="checkOutDone">
+         <h2>Check Out Successfull. Thank you !!</h2> 
+      </div>
+
       <script>
+         //CheckOut and Vanished
+         const CheckOutBtn = document.getElementById('checkOut');
+         CheckOutBtn.addEventListener('click', function(){
+            document.getElementById('vanish').style.display = 'none';
+            document.getElementById('checkOutDone').style.display = 'block';
+            document.getElementById('checkOutDone').style.textAlign = 'center';
+            document.getElementById('checkOutDone').style.padding = '50px';
+            document.getElementById('checkOutDone').style.color = 'green';
+         })
+
          // Remove Item handler for phone
          const removeItem = document.getElementById('removeItem');
          removeItem.addEventListener('click', function(){
@@ -138,6 +152,9 @@
                document.getElementById('Tax').innerText = (sub_total * 0.05).toFixed(2);
                document.getElementById('Total').innerText = (sub_total + sub_total * 0.05).toFixed(2);
          }
+
+
+         
 
       </script>
    </body>
