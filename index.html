@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
    <title>Shopping Cart</title>
    <meta charset="utf-8">
@@ -9,158 +10,75 @@
    <link href="style.css" rel="stylesheet">
 </head>
 
-   <body>
-      <section id='vanish'>
-         <div class="container">
-            <div id = 'cart_item' class="cart">
-               <div class="col-md-12 col-lg-10 mx-auto">
-                  <div id='cart_item' class="cart-item">
-                     <div class="row">
-                        <div class="col-md-7 center-item">
-                           <img src="images/product-1.png" alt="">
-                           <h5>iPhone 11 128GB Black</h5>
-                        </div>
+<body>
 
-                        <div class="col-md-5 center-item">
-                           <div class="input-group number-spinner">
-                              <button class="btn btn-default"><i id='phnMinus' class="fas fa-minus"></i></button>
-                              <input type="text" id='noClick' class="form-control text-center" value="1">
-                              <button class="btn btn-default"><i id='phnPlus' class="fas fa-plus"></i></button>
-                           </div>
-                           <h5>$<span id='price'>1219</span></h5>
-                           <img src="images/remove.png" alt="" id='removeItem'class="remove-item">
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id='phone-decrease' class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" id='phone-count' class="form-control text-center" value="1">
+                           <button id='phone-increase' class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
+                        <h5>$<span id='phone-price'>1219</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
+               </div>
 
-                  <div id = 'cart_item2'class="cart-item">
-                     <div class="row">
-                        <div class="col-md-7 center-item mx-auto">
-                           <img src="images/product-2.png" alt="">
-                           <h5>iPhone 11 Silicone Case - Black</h5>
-                        </div>
-                        <div class="col-md-5 center-item">
-                           <div class="input-group number-spinner">
-                              <button class="btn btn-default"><i id='bcMinus' class="fas fa-minus"></i></button>
-                              <input type="text"  id='bcNoClick' class="form-control text-center" value="1">
-                              <button class="btn btn-default"><i id='bcPlus'class="fas fa-plus"></i></button>
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id='case-decrease'class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" id='case-count' class="form-control text-center" value="1">
+                           <button id='case-increase' class="btn btn-default"><i class="fas fa-plus"></i></button>
 
-                           </div>
-                           <h5>$<span id='price2'>59</span></h5>
-                           <img src="images/remove.png" alt="" id='removeItem2' class="remove-item">
                         </div>
+                        <h5>$<span id='case-price'>59</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
+               </div>
 
-                  <div class="cart-item">
-                     <div class="row">
+               <div class="cart-item">
+                  <div class="row">
 
-                        <div class="col-md-8">
-                           <h5>Subtotal: </h5>
-                           <h5>Tax(5%):</h5>
-                           <h5>Total:</h5>
-                        </div>
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax(10%):</h5>
+                        <h5>Total:</h5>
+                     </div>
 
-                        <div class="col-md-4 status">
-                           <h5>$<span id='subtotal'>00</span></h5>
-                           <h5>$<span id='Tax'>00</span></h5>
-                           <h5>$<span id='Total'>00</span></h5>
-                        </div>
+                     <div class="col-md-4 status">
+                        <h5>$<span id='sub-total'>00</span></h5>
+                        <h5>$<span id='tax'>00</span></h5>
+                        <h5>$<span id='grandTotal'>00</span></h5>
                      </div>
                   </div>
-                  <div class="col-md-12 pt-4 pb-4">
-                     <button type="button" id='checkOut' class="btn btn-success check-out">Check Out</button>
-                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
-      </section>
-
-      <div id="checkOutDone">
-         <h2>Check Out Successfull. Thank you !!</h2> 
       </div>
+   </section>
 
-      <script>
-         //CheckOut and Vanished
-         const CheckOutBtn = document.getElementById('checkOut');
-         CheckOutBtn.addEventListener('click', function(){
-            document.getElementById('vanish').style.display = 'none';
-            document.getElementById('checkOutDone').style.display = 'block';
-            document.getElementById('checkOutDone').style.textAlign = 'center';
-            document.getElementById('checkOutDone').style.padding = '50px';
-            document.getElementById('checkOutDone').style.color = 'green';
-         })
+   <script src="jscode.js"></script>
+</body>
 
-         // Remove Item handler for phone
-         const removeItem = document.getElementById('removeItem');
-         removeItem.addEventListener('click', function(){
-            document.getElementById('cart_item').style.display = 'none';
-         })
-
-         // Remove Item handler for backcover
-         const removeItem2 = document.getElementById('removeItem2');
-         removeItem2.addEventListener('click', function(){
-            document.getElementById('cart_item2').style.display = 'none';
-         })
-
-         //Plus Button Event Handler for phone
-         const phnPlus = document.getElementById('phnPlus');
-         phnPlus.addEventListener('click', function() {
-            additions('noClick', 'price', 1219);
-         })
-
-         //Minus Button Event Handler for phone
-         const phnMinus = document.getElementById('phnMinus');
-         phnMinus.addEventListener('click', function(){
-            subtractions('noClick', 'price', 1219);
-         })
-
-         //Plus Button Event Handler for backcover
-         const bcPlus = document.getElementById('bcPlus');
-         bcPlus.addEventListener('click', function(){
-            additions('bcNoClick', 'price2', 59);
-         })
-
-         //Minus Button Event Handler for backcover
-         const bcMin = document.getElementById('bcMinus');
-         bcMin.document.addEventListener('click', function(){
-          subtractions('bcNoClick', 'price2', 59);
-         })
-
-         // document.getElementById('bcMinus').addEventListener('click', function(){
-         //    const caseInput = document.getElementById('bcNoClick').value;
-         //       const caseCount = parseInt(caseInput);
-         //       const caseNewCount = caseCount - 1;
-         //       caseInput.value = caseNewCount;
-         //       const caseTotal = caseNewCount * 59;
-         //       document.getElementById('price2').innerText = '$' + caseTotal;
-         // })
-
-         function additions(id1, id2, p) {
-            var value = parseInt(document.getElementById(id1).value)+1;
-            document.getElementById(id1).value = value;
-            var totalPrice = parseInt(document.getElementById(id2).innerText)+p;
-            document.getElementById(id2).innerText = totalPrice;
-            subTotal(totalPrice);
-
-         }
-
-         function subtractions(id1, id2, p) {
-            var value = parseInt(document.getElementById(id1).value);
-            if (value >= 2){
-               document.getElementById(id1).value = value - 1;
-               var totalPrice = parseInt(document.getElementById(id2).innerText)-p;
-               document.getElementById(id2).innerText = totalPrice;
-               subTotal(totalPrice);
-            }  
-         }
-
-         // Total calculation
-         function subTotal(sub_total){
-               document.getElementById('subtotal').innerText = sub_total;
-               document.getElementById('Tax').innerText = (sub_total * 0.05).toFixed(2);
-               document.getElementById('Total').innerText = (sub_total + sub_total * 0.05).toFixed(2);
-         }
-      </script>
-   </body>
 </html>
