@@ -27,7 +27,7 @@
                               <input type="text" id='noClick' class="form-control text-center" value="1">
                               <button class="btn btn-default"><i id='phnPlus' class="fas fa-plus"></i></button>
                            </div>
-                           <h5>$<span id='price'>1229</span></h5>
+                           <h5>$<span id='price'>1219</span></h5>
                            <img src="images/remove.png" alt="" id='removeItem'class="remove-item">
                         </div>
                      </div>
@@ -106,13 +106,13 @@
          //Plus Button Event Handler for phone
          const phnPlus = document.getElementById('phnPlus');
          phnPlus.addEventListener('click', function() {
-            additions('noClick', 'price', 1229);
+            additions('noClick', 'price', 1219);
          })
 
          //Minus Button Event Handler for phone
          const phnMinus = document.getElementById('phnMinus');
          phnMinus.addEventListener('click', function(){
-            subtractions('noClick', 'price', 1229);
+            subtractions('noClick', 'price', 1219);
          })
 
          //Plus Button Event Handler for backcover
@@ -124,8 +124,17 @@
          //Minus Button Event Handler for backcover
          const bcMin = document.getElementById('bcMinus');
          bcMin.document.addEventListener('click', function(){
-            subtractions('bcNoClick', 'price2', 59);
+          subtractions('bcNoClick', 'price2', 59);
          })
+
+         // document.getElementById('bcMinus').addEventListener('click', function(){
+         //    const caseInput = document.getElementById('bcNoClick').value;
+         //       const caseCount = parseInt(caseInput);
+         //       const caseNewCount = caseCount - 1;
+         //       caseInput.value = caseNewCount;
+         //       const caseTotal = caseNewCount * 59;
+         //       document.getElementById('price2').innerText = '$' + caseTotal;
+         // })
 
          function additions(id1, id2, p) {
             var value = parseInt(document.getElementById(id1).value)+1;
